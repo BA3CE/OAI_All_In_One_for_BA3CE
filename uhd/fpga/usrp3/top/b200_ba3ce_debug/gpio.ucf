@@ -1,0 +1,30 @@
+
+
+## GPIO bus - These pins are N/C on the LX75
+#NET "fp_gpio<0>" LOC = "F8" | IOSTANDARD = LVCMOS33 | PULLUP ;
+#NET "fp_gpio<1>" LOC = "E8" | IOSTANDARD = LVCMOS33 | PULLUP ;
+#NET "fp_gpio<2>" LOC = "F9" | IOSTANDARD = LVCMOS33 | PULLUP ;
+#NET "fp_gpio<3>" LOC = "G8" | IOSTANDARD = LVCMOS33 | PULLUP ;
+#NET "fp_gpio<4>" LOC = "H10" | IOSTANDARD = LVCMOS33 | PULLUP ;
+#NET "fp_gpio<5>" LOC = "G9" | IOSTANDARD = LVCMOS33 | PULLUP ;
+#NET "fp_gpio<6>" LOC = "F10" | IOSTANDARD = LVCMOS33 | PULLUP ;
+#NET "fp_gpio<7>" LOC = "E10" | IOSTANDARD = LVCMOS33 | PULLUP ;
+#BA3CE
+NET "fp_gpio<0>" LOC = "H11" | IOSTANDARD = LVCMOS33 | PULLUP ;
+NET "fp_gpio<1>" LOC = "E6" | IOSTANDARD = LVCMOS18 | PULLUP ;
+NET "fp_gpio<2>" LOC = "G11" | IOSTANDARD = LVCMOS33 | PULLUP ;
+NET "fp_gpio<3>" LOC = "E5" | IOSTANDARD = LVCMOS18 | PULLUP ;
+NET "fp_gpio<4>" LOC = "F12" | IOSTANDARD = LVCMOS33 | PULLUP ;
+NET "fp_gpio<5>" LOC = "B3" | IOSTANDARD = LVCMOS18 | PULLUP ;
+NET "fp_gpio<6>" LOC = "H12" | IOSTANDARD = LVCMOS33 | PULLUP ;
+NET "fp_gpio<7>" LOC = "A2" | IOSTANDARD = LVCMOS18 | PULLUP ;
+
+NET "cat_ce_debug" LOC = "F8" | IOSTANDARD = LVCMOS33 | PULLUP ;
+NET "cat_mosi_debug" LOC = "F9" | IOSTANDARD = LVCMOS33 | PULLUP ;
+NET "cat_miso_debug" LOC = "H10" | IOSTANDARD = LVCMOS33 | PULLUP ;
+NET "cat_sclk_debug" LOC = "F10" | IOSTANDARD = LVCMOS33 | PULLUP ;
+
+NET "fx3_ce_debug" LOC = "E8" | IOSTANDARD = LVCMOS33 | PULLUP ;
+NET "fx3_mosi_debug" LOC = "G8" | IOSTANDARD = LVCMOS33 | PULLUP ;
+NET "fx3_miso_debug" LOC = "G9" | IOSTANDARD = LVCMOS33 | PULLUP ;
+NET "fx3_sclk_debug" LOC = "E10" | IOSTANDARD = LVCMOS33 | PULLUP ;

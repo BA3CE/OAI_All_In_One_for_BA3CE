@@ -1,0 +1,13 @@
+--- openair-cn/src/oai_hss/utils/hss_config.c	2017-06-07 16:17:08.081046102 +0200
++++ opencells-mods/src/oai_hss/utils/hss_config.c	2017-06-06 20:47:17.000000000 +0200
+@@ -297,8 +297,8 @@
+     if (  (config_setting_lookup_string( setting, HSS_CONFIG_STRING_OPERATOR_KEY, (const char **)&astring) )) {
+       hss_config_p->operator_key = strdup(astring);
+     } else {
+-      FPRINTF_ERROR( "Failed to parse HSS configuration file token %s!\n", HSS_CONFIG_STRING_OPERATOR_KEY);
+-      return ret;
++      //FPRINTF_ERROR( "Failed to parse HSS configuration file token %s!\n", HSS_CONFIG_STRING_OPERATOR_KEY);
++      //return ret;
+     }
+ 
+     if (  (config_setting_lookup_string( setting, HSS_CONFIG_STRING_RANDOM, (const char **)&astring) )) {

@@ -1,0 +1,29 @@
+--- openair-cn/src/gtpv1-u/gtp_mod_kernel.c	2017-06-07 16:17:08.053047242 +0200
++++ opencells-mods/src/gtpv1-u/gtp_mod_kernel.c	2017-06-05 18:32:53.000000000 +0200
+@@ -31,7 +31,7 @@
+ #define GTP_DEVNAME "gtp0"
+ 
+ //------------------------------------------------------------------------------
+-int gtp_mod_kernel_init(int *fd0, int *fd1u, struct in_addr *ue_net, int mask, int gtp_dev_mtu)
++int gtp_mod_kernel_init(int *fd0, int *fd1u, struct in_addr *ue_net, int mask, spgw_config_t * spgw_config)
+ {
+   // we don't need GTP v0, but interface with kernel requires 2 file descriptors
+   *fd0 = socket(AF_INET, SOCK_DGRAM, 0);
+@@ -47,7 +47,7 @@
+       .sin_family = AF_INET,
+       .sin_port = htons(GTPV1U_UDP_PORT),
+       .sin_addr = {
+-          .s_addr   = INADDR_ANY,
++          .s_addr   = spgw_config->sgw_config.ipv4.S1u_S12_S4_up,
+       },
+   };
+ 
+@@ -80,7 +80,7 @@
+   }
+   OAILOG_NOTICE (LOG_GTPV1U, "Using the GTP kernel mode (genl ID is %d)\n", gtp_nl.genl_id);
+ 
+-  bstring system_cmd = bformat ("ip link set dev %s mtu %u", GTP_DEVNAME, gtp_dev_mtu);
++  bstring system_cmd = bformat ("ip link set dev %s mtu %u", GTP_DEVNAME,spgw_config->pgw_config.ipv4.mtu_SGI);
+   int ret = system ((const char *)system_cmd->data);
+   if (ret) {
+     OAILOG_ERROR (LOG_GTPV1U, "ERROR in system command %s: %d at %s:%u\n", bdata(system_cmd), ret, __FILE__, __LINE__);

@@ -1,0 +1,11 @@
+--- openair-cn/src/oai_mme/oai_mme.c	2017-06-07 16:17:08.081046102 +0200
++++ opencells-mods/src/oai_mme/oai_mme.c	2017-06-05 17:57:01.000000000 +0200
+@@ -75,7 +75,7 @@
+   pid_dir = bstr2cstr(mme_config.pid_dir, 1);
+   pid_dir = pid_dir ? pid_dir : "/var/run";
+   pid_file_name = get_exe_absolute_path(pid_dir);
+-  bcstrfree(pid_dir);
++  //bcstrfree(pid_dir);
+ 
+ #if DAEMONIZE
+   pid_t pid, sid; // Our process ID and Session ID
